@@ -1,6 +1,5 @@
 # thymeleaf-main-point
 타임리프 실무에 사용할 핵심 내용 정리
-- 익숙하지 않은 방법들 정리
 
 <h3 style="font-weight:bold">1. Map 타입 data 출력</h3>
 JAVA) A, B : 객체 인스턴스 <br>
@@ -92,4 +91,33 @@ head.html : <br>
   <br>
 
  &lt;th:block th:replace="${links}" /&gt; <br>
-&lt;/head&gt;  <br>
+&lt;/head&gt;  <br>	
+	
+------------------------------------------------------------
+<h3 style="font-weight:bold;">9. 입력 form 쉽게 처리하는 방법</h3> 	
+<h4 style="fond-weight:bold;">9-1. input의 id와 name 타임리프로 대신하기</h4>
+<p>
+ 	th:object = "${item}" 을 쓰고 <br>
+	th:field="${item.itemName}" 을 input 에 쓰면 <br>
+	이 이름으로 id와 name과 th:value 까지 자동생성 해주고 또한 checked 속성까지! <br>
+	<br>
+	th:field="*{itemName}" : 선택 변수 식 <br>
+	으로 줄여서 쓸 수도 있다 (th:object 로 객체 지정시 *로 인식 가능) <br>	 	
+</p>
+<h4 style="fond-weight:bold;">9-2. checkbox 처리</h4>	
+<p>
+	체크를 안했을 때는 서버로 값이 아예 안 넘어가서 false 판단을 못하는데,
+	그래서 '&lt;input type="hidden" name="_open" value="on" class="form-check-input"gt;'를 추가해줘야됨 <br>
+	checkbox 도 th:field 가 이 hidden 태그 자동 추가 기능을 제공 <br>
+</p>
+<h4 style="fond-weight:bold;">9-3. each 반복문에서 id - for 처리</h4>	
+<p>
+	&lt;input th:field="*{field}"&gt; // id는 유니크 해야되므로 타임리프에서 filed1, filed2, ... 이렇게 만들어줌 <br>
+	&lt;label th:for="${#ids.prev('input id값')}" &gt; // 이렇게 for 속성 처리하면 동일하게 맞춰짐
+</p>
+<h4 style="fond-weight:bold;">9-4. selectbox 처리</h4>
+<p>
+	selectbox 에서도 th:field 쓰면 <br>
+	th:each문으로 option 돌릴 때 th:value 와 값이 같으면 자동으로 selected 추가
+</p>	
+-------------------------------------------------------------
