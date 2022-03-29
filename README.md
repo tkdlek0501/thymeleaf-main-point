@@ -99,7 +99,7 @@ head.html : <br>
 <p>
  	th:object = "${item}" 을 쓰고 <br>
 	th:field="${item.itemName}" 을 input 에 쓰면 <br>
-	이 이름으로 id와 name과 th:value 까지 자동생성 해주고 또한 checked 속성까지! <br>
+	이 이름으로 id와 name과 th:value 까지 자동생성 해주고 또한 checkbox에서는 checked 속성까지! <br>
 	<br>
 	th:field="*{itemName}" : 선택 변수 식 <br>
 	으로 줄여서 쓸 수도 있다 (th:object 로 객체 지정시 *로 인식 가능) <br>	 	
@@ -107,7 +107,7 @@ head.html : <br>
 <h4 style="fond-weight:bold;">9-2. checkbox 처리</h4>	
 <p>
 	체크를 안했을 때는 서버로 값이 아예 안 넘어가서 false 판단을 못하는데,
-	그래서 '&lt;input type="hidden" name="_open" value="on" class="form-check-input"gt;'를 추가해줘야됨 <br>
+	그래서 '&lt;input type="hidden" name="_open" value="on" class="form-check-input"&gt;'를 추가해줘야됨 <br>
 	checkbox 도 th:field 가 이 hidden 태그 자동 추가 기능을 제공 <br>
 </p>
 <h4 style="fond-weight:bold;">9-3. each 반복문에서 id - for 처리</h4>	
