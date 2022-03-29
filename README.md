@@ -14,7 +14,7 @@ Template) <br>
 <h3 style="font-weight:bold;color:red;">2. link (a 태그 href)</h3>
 JAVA) <br>
 model.addAttribute("param1", data1); <br>
-model.addAttribute("param1", data1); <br>
+model.addAttribute("param2", data2); <br>
 <br>
 Template) <br>
 &lt;a th:href="@{/hello/{param1}(param1=${param1}, param2=${param2})}"&gt;&lt;/a&gt; <br>
