@@ -1,7 +1,7 @@
 # thymeleaf-main-point
 타임리프 실무에 사용할 핵심 내용 정리
 
-<h3 style="font-weight:bold">1. Map 타입 data 출력</h3>
+<h3 style="font-weight:bold">1. Map data 출력</h3>
 JAVA) A, B : 객체 인스턴스 <br>
 <span> Map &lt;String, Object&gt; map = new HashMap<>(); </span><br>
 map.put("A", A); <br>
